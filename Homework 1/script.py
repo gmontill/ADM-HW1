@@ -625,6 +625,46 @@ if __name__ == '__main__':
     n = int(input())
     print(list(map(cube, fibonacci(n))))
 
+#XML 1
+import sys
+import xml.etree.ElementTree as etree
+
+def get_attr_number(node):
+    # your code goes here
+    count = 0
+    for i in node.iter():
+        count += len(i.attrib)
+    return count
+if __name__ == '__main__':
+    sys.stdin.readline()
+    xml = sys.stdin.read()
+    tree = etree.ElementTree(etree.fromstring(xml))
+    root = tree.getroot()
+    print(get_attr_number(root))
+
+#XML 2
+import xml.etree.ElementTree as etree
+
+maxdepth = 0
+def depth(elem, level):
+    global maxdepth
+    # your code goes here
+    if level == maxdepth:
+        maxdepth += 1
+    
+    for i in elem:
+        depth(i, level+1)
+        
+if __name__ == '__main__':
+    n = int(input())
+    xml = ""
+    for i in range(n):
+        xml =  xml + input() + "\n"
+    tree = etree.ElementTree(etree.fromstring(xml))
+    depth(tree.getroot(), -1)
+    print(maxdepth)
+
+ 
 
 #PROBLEM 2
 
