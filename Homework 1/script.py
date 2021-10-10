@@ -7,8 +7,6 @@ import random
 import re
 import sys
 
-
-
 if __name__ == '__main__':
     n = int(input().strip())
     if (n%2 == 0):
@@ -562,7 +560,70 @@ elif d == 5:
 elif d == 6:
     print "SUNDAY"
 
-#
+#Exceptions
+for i in range(int(input())):
+    try:
+        a, b = map(int, input().split())
+        print(a//b)
+    except ZeroDivisionError as e:
+        print("Error Code:",e);
+    except ValueError as e:
+        print("Error Code:",e);
+
+#Zipped!
+n, x = map(int, input().split())
+
+grades = list()
+
+for i in range(x):
+    grades.append(map(float, input().split()))
+
+for j in zip(*grades):
+    print(sum(j)/len(j))
+
+
+#Athlete Sort
+# !/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+from operator import itemgetter
+#as seen in online tutorials, itemgetter works with sort to give me the key to work with
+
+if __name__ == '__main__':
+    nm = input().split()
+
+    n = int(nm[0])
+
+    m = int(nm[1])
+
+    arr = []
+
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    k = int(input())
+
+    arr = sorted(arr, key=itemgetter(k))
+    for i in arr:
+        print(*i)
+
+#Map and Lambda Function
+cube = lambda x: x ** 3  # complete the lambda function
+def fibonacci(n):
+    # return a list of fibonacci numbers
+    l = [0, 1]
+    for i in range(2, n):
+        l.append(l[i - 1] + l[i - 2])
+    return (l[0:n])
+
+
+if __name__ == '__main__':
+    n = int(input())
+    print(list(map(cube, fibonacci(n))))
 
 
 #PROBLEM 2
