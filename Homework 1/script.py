@@ -543,6 +543,27 @@ for i in range(n):
        sizes[s] -= 1
 print(earned)
 
+#Calendar Module
+import calendar
+m, d, y = map(int, raw_input().split())
+d = calendar.weekday(y, m, d)
+if d == 0:
+    print "MONDAY"
+elif d == 1:
+    print "TUESDAY"    
+elif d == 2:
+    print "WEDNESDAY"
+elif d == 3:
+    print "THURSDAY"
+elif d == 4:
+    print "FRIDAY"
+elif d == 5:
+    print "SATURDAY"
+elif d == 6:
+    print "SUNDAY"
+
+#
+
 
 #PROBLEM 2
 
